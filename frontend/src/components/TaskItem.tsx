@@ -22,7 +22,7 @@ function TaskItem({ task, onTaskUpdated }: TaskItemProps) {
   };
 
   return (
-    <div className={`task-item ${task.completed ? 'task-completed' : ''}`}>
+    <div className={`task-item ${task.is_completed ? 'task-completed' : ''}`}>
       <div className="task-content">
         <h3 className="task-title">{task.title}</h3>
         {task.description && (
@@ -30,7 +30,7 @@ function TaskItem({ task, onTaskUpdated }: TaskItemProps) {
         )}
       </div>
       <div className="task-actions">
-        {!task.completed && (
+        {!task.is_completed && (
           <button className="btn btn-complete" onClick={handleComplete}>
             Complete
           </button>

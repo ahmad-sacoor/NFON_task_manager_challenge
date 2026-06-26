@@ -2,7 +2,7 @@ export interface Task {
   id: number;
   title: string;
   description: string;
-  completed: boolean;
+  is_completed: boolean;
 }
 
 export interface CreateTaskPayload {
