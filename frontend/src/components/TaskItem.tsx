@@ -1,6 +1,6 @@
 import React from 'react';
 import { Task } from '../types';
-import { completeTask } from '../api';
+import { completeTask, deleteTask  } from '../api';
 
 interface TaskItemProps {
   task: Task;
@@ -18,7 +18,12 @@ function TaskItem({ task, onTaskUpdated }: TaskItemProps) {
   };
 
   const handleDelete = async () => {
-    // TODO: Implement delete functionality
+    try {
+      await deleteTask(task.id);
+      onTaskUpdated();
+    } catch (err) {
+      console.error('Failed to delete task:', err);
+    }
   };
 
   return (
