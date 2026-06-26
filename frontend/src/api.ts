@@ -1,6 +1,6 @@
 import { Task, CreateTaskPayload } from './types';
 
-const BASE_URL = 'http://localhost:8081/api';
+const BASE_URL = 'http://localhost:8080/api';
 
 export async function fetchTasks(): Promise<Task[]> {
   const response = await fetch(`${BASE_URL}/tasks`);
