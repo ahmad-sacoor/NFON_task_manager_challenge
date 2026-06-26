@@ -15,7 +15,7 @@ function TaskList({ refreshTrigger, onTaskUpdated }: TaskListProps) {
 
   useEffect(() => {
     loadTasks();
-  }, []);
+  }, [refreshTrigger]);
 
   const loadTasks = async () => {
     try {
